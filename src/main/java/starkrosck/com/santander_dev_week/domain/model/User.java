@@ -13,6 +13,12 @@ public class User {
 
     private String name;
 
+    private String email;
+
+    private String telefone;
+
+    private String ccreation;
+
     @OneToOne(cascade = CascadeType.ALL)
     private Account account;
 
@@ -72,6 +78,28 @@ public class User {
     public void setNews(List<News> news) {
         this.news = news;
     }
+    public String getTelefone() {
+        return telefone;
+    }
 
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getCcreation(){
+        return  this.ccreation;
+    }
+
+    public void setCcreation(String ccreation){
+        this.ccreation = ccreation;
+    }
 
 }

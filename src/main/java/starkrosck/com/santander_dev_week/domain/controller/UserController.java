@@ -37,5 +37,17 @@ public class UserController {
         return ResponseEntity.created(location).body(userCreated);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<User> delete(@PathVariable Long id) throws IllegalAccessException {
+        User user = userService.delete(id);
+        return ResponseEntity.ok(user);
+    }
+
+    @PutMapping
+    public ResponseEntity<User> update(@RequestBody User userToUpdate) throws IllegalAccessException {
+        User updatedUser = userService.update(userToUpdate);
+        return ResponseEntity.ok(updatedUser);
+    }
+
 
 }
